@@ -11,9 +11,12 @@ namespace MicroServices.DBContexts
     {
         public ProductContext(DbContextOptions<ProductContext> options) : base(options)
         {
-
+            
         }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging(true);
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
@@ -31,14 +34,14 @@ namespace MicroServices.DBContexts
                 new Category
                 {
                     Description = "Dresses",
-                    Id = 1,
+                    Id = 2,
                     Name = "Clothes"
 
                 },
                 new Category
                 {
                     Description = "Grocery Items",
-                    Id = 1,
+                    Id = 3,
                     Name = "Grocery"
 
                 }
