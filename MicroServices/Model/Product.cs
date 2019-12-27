@@ -7,6 +7,7 @@ namespace MicroServices.Model
 {
     public class Product
     {
+        // product model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
